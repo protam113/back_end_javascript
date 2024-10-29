@@ -17,6 +17,7 @@ import categoryRoute from "./routes/categoryRoute.js";
 import solutionRoute from "./routes/solutionRoute.js";
 import documentRoute from "./routes/documentRoute.js";
 import serviceRoute from "./routes/serviceRoute.js";
+import cartRouter from "./routes/cartRouter.js";
 
 dotenv.config();
 const app = express();
@@ -49,6 +50,7 @@ app.use("/api/category", categoryRoute);
 app.use("/api/solution", solutionRoute);
 app.use("/api/document", documentRoute);
 app.use("/api/service", serviceRoute);
+app.use("/api/cart", cartRouter);
 
 dbConnection();
 

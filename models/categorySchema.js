@@ -1,13 +1,22 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-const categorySchema = new mongoose.Schema({
+const categorySchema = new mongoose.Schema(
+  {
+    id: {
+      type: Number,
+      required: true,
+      unique: true,
+      index: true,
+    },
     name: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     description: {
-        type: String,
+      type: String,
     },
-});
+  },
+  { _id: false }
+); // Không tự động tạo trường _id của MongoDB
 
-export const Category = mongoose.model('Category', categorySchema);
+export const Category = mongoose.model("Category", categorySchema);
