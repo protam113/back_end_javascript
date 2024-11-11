@@ -26,6 +26,11 @@ const productSchema = new mongoose.Schema({
         required: true,
         minLength: [10, "Description Must Contain At Least 10 Characters!"],
     },
+    category: {
+        type: Number,
+        required: true,
+        min: [0, "Price Must Be Non-Negative!"],
+    },
     price: {
         type: Number,
         required: true,
